@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FD converter</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>FD calculater</h1>
+        <div class="inputdiv"></div>
+        <input type="text" id="input" placeholder="No. of Monts">
+        <div>
+            <button type="submit" onclick="calculate()">Claculate FD</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script>
+        function calculate(){
+            let months=Number(document.getElementById("input").value)
+            let rate=8;
+            if(months<3)
+                rate=5.8
+            else if(months>=3&&months<=6)
+                rate=6.5
+            else if(months>=7 && months<=9)
+                rate=6.8
+            else
+                rate=7
+            let result=document.querySelector("#result")
+            result.innerHTML="your intrest rate is"+rate+"%"
+        }
+    </script>
+</body>
+</html>
